@@ -1,0 +1,8 @@
+{% extends "main.html" %}
+{% block content %}
+    <ul>
+    {% for supply in supplies %}
+        <li class="supply">{{ supply.name }} <span class="quantity">quantité : {{ supply.quantity }}</span> </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

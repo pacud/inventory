@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/inventory.css') }}">    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>inventory</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>

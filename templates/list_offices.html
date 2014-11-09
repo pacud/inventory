@@ -1,0 +1,8 @@
+{% extends "main.html" %}
+{% block content %}
+    <ul>
+    {% for office in offices %}
+        <li class="office">{{ office.name }} <span class="floor">étage : {{ office.floor }}</span> </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
