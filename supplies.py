@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from flask import render_template
 from base import EndpointCollection
 
 
@@ -10,5 +9,11 @@ class Supplies(EndpointCollection):
         """Retrieves supplies and returns a list"""
         supplies = [supply for supply in self.db.supplies.find()]
         for supply in supplies:
-            supply['quantity'] = int(supply['quantity'])
-        return render_template('list_supplies.html', supplies=supplies)
+            supply['quantity'] = int(supply['available_quantity'])
+        return supplies
+
+    def defails(self, supply_name):
+        """Retrieves the repartition of a specific supply in offices"""
+        crit = {'supply': supply_name}
+        details = [detail for detail in self.db.diffusion.find(crit)]
+        return details

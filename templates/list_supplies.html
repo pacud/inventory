@@ -2,7 +2,10 @@
 {% block content %}
     <ul>
     {% for supply in supplies %}
-        <li class="supply">{{ supply.name }} <span class="quantity">quantité : {{ supply.quantity }}</span> </li>
+        <li class="supply">
+            {{ supply.name }} <span class="quantity">available quantity : {{ supply.quantity }}</span>
+            <a href="/supplies/details/{{ supply.name }}">details</a>
+        </li>
     {% endfor %}
     </ul>
 {% endblock %}

@@ -2,7 +2,10 @@
 {% block content %}
     <ul>
     {% for office in offices %}
-        <li class="office">{{ office.name }} <span class="floor">étage : {{ office.floor }}</span> </li>
+        <li class="office">
+            {{ office.name }} <span class="floor">floor : {{ office.floor }}</span>
+            <a href="/offices/details/{{ office.name }}">details</a>
+        </li>
     {% endfor %}
     </ul>
 {% endblock %}

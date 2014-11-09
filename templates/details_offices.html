@@ -1,0 +1,9 @@
+{% extends "main.html" %}
+{% block content %}
+    <ul>
+    {% for office in details %}
+        <li>{{ office.supply }} <span>{{ office.quantity }}</span> </li>
+    {% endfor %}
+    </ul>
+    <a href="/offices/list">Back to offices list</a>
+{% endblock %}
